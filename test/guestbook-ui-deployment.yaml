@@ -19,13 +19,13 @@ spec:
         args:
         - /bin/sh
         - -c
-        - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 6000
+        - sleep 5; touch /tmp/healthy; while true; do sleep 30; done;
         readinessProbe:
           exec:
             command:
             - cat
             - /tmp/healthy
-          initialDelaySeconds: 30
+          initialDelaySeconds: 5
           periodSeconds: 5
         ports:
         - containerPort: 80
