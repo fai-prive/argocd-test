@@ -21,6 +21,8 @@ spec:
         - -c
         - sleep 5; touch /tmp/healthy;
         readinessProbe:
+          exec:
+            command:
           initialDelaySeconds: 30
           periodSeconds: 5
         ports:
