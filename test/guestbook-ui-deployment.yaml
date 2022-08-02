@@ -20,12 +20,12 @@ spec:
         - /bin/sh
         - -c
         - sleep 60; touch /tmp/healthy;
-      readinessProbe:
-        exec:
-          command:
-          - cat
-          - /tmp/healthy
-        initialDelaySeconds: 5
-        periodSeconds: 5
-          ports:
-          - containerPort: 80
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 5
+            ports:
+            - containerPort: 80
