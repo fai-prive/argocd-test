@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: monolith
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: monolith
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: monolith
     spec:
       containers:
       - image: k8s.gcr.io/busybox
-        name: guestbook-ui
+        name: monolith
         args:
         - /bin/sh
         - -c
