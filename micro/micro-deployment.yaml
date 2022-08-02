@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: micro
+  template:
+    metadata:
+      labels:
+        app: micro
+    spec:
+      containers:
+      - image: k8s.gcr.io/busybox
+        name: micro
+        args:
+        - /bin/sh
+        - -c
+        - touch /tmp/healthy; while true; do sleep 30; done;
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 30
+          periodSeconds: 5
+        ports:
+        - containerPort: 80
