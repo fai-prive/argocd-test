@@ -23,6 +23,8 @@ spec:
         readinessProbe:
           exec:
             command:
+            - echo
+            - "Hi"
           initialDelaySeconds: 30
           periodSeconds: 5
         ports:
