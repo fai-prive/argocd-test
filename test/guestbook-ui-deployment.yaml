@@ -27,5 +27,6 @@ spec:
             - "Hi"
           initialDelaySeconds: 30
           periodSeconds: 5
+          timeoutSeconds: 60
         ports:
         - containerPort: 80
