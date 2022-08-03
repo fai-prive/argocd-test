@@ -14,7 +14,7 @@ spec:
         app: monolith
     spec:
       containers:
-      - image: k8s.gcr.io/busybox
+      - image: k8s.gcr.io/busybox:stable-uclibc
         name: monolith
         args:
         - /bin/sh
