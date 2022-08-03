@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: monolith
-  namespace: default
+  namespace: argocd
   labels:
     app.kubernetes.io/instance: apps-deployments
 spec:
