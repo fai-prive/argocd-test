@@ -27,7 +27,7 @@ dependencies:
   - name: newrelic-logging
     repository: https://helm-charts.newrelic.com
     condition: logging.enabled
-    version: 1.11.0
+    version: 1.11.10
 
   - name: newrelic-pixie
     repository: https://helm-charts.newrelic.com

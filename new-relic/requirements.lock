@@ -16,12 +16,12 @@ dependencies:
   version: 1.8.0
 - name: newrelic-logging
   repository: https://helm-charts.newrelic.com
-  version: 1.11.0
+  version: 1.11.10
 - name: newrelic-pixie
   repository: https://helm-charts.newrelic.com
   version: 0.1.0-alpha.4
 - name: pixie-chart
   repository: https://pixie-helm-charts.storage.googleapis.com
   version: 0.7.7
-digest: sha256:3fa3765f9377841478205b019dc5caaf459d8fc856c56913c44e29ceb147bbc7
-generated: "2022-11-08T17:12:40.439379+08:00"
+digest: sha256:7aaa07e376b4fce33b366a0968d07783d7cc08ae3978bbffaa2c7f74a5d7ac35
+generated: "2022-11-08T17:15:11.798343+08:00"
