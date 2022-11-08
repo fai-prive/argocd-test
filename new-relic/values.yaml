@@ -7,7 +7,7 @@ global:
 # enables newrelic-infrastructure
 infrastructure:
   privileged: true
-  enabled: true
+  enabled: false
 
 # enables nri-prometheus
 prometheus:
@@ -15,15 +15,15 @@ prometheus:
 
 # enables nri-metadata-injection
 webhook:
-  enabled: true
+  enabled: false
 
 # enables kube-state-metrics
 ksm:
-  enabled: true
+  enabled: false
 
 # enables nri-kube-events
 kubeEvents:
-  enabled: true
+  enabled: false
 
 # enables newrelic-logging
 logging:
