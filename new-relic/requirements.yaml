@@ -1,0 +1,40 @@
+dependencies:
+  - name: newrelic-infrastructure
+    repository: https://helm-charts.newrelic.com
+    condition: infrastructure.enabled
+    version: 2.4.2
+
+  - name: nri-prometheus
+    repository: https://helm-charts.newrelic.com
+    condition: prometheus.enabled
+    version: 1.7.0
+
+  - name: nri-metadata-injection
+    repository: https://helm-charts.newrelic.com
+    condition: webhook.enabled
+    version: 1.4.2
+
+  - name: kube-state-metrics
+    repository: https://kubernetes.github.io/kube-state-metrics
+    condition: ksm.enabled
+    version: 2.13.2
+
+  - name: nri-kube-events
+    repository: https://helm-charts.newrelic.com
+    condition: kubeEvents.enabled
+    version: 1.8.0
+
+  - name: newrelic-logging
+    repository: https://helm-charts.newrelic.com
+    condition: logging.enabled
+    version: 1.4.7
+
+  - name: newrelic-pixie
+    repository: https://helm-charts.newrelic.com
+    condition: newrelic-pixie.enabled
+    version: 0.1.0-alpha.4
+
+  - name: pixie-chart
+    repository: https://pixie-helm-charts.storage.googleapis.com
+    condition: pixie-chart.enabled
+    version: 0.7.7

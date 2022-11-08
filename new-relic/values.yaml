@@ -1,0 +1,38 @@
+# Default values for nri-infrastructure.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+global:
+  licenseKey: eu01xxb16615327338269f8928c1dab11f46NRAL
+
+# enables newrelic-infrastructure
+infrastructure:
+  privileged: true
+  enabled: true
+
+# enables nri-prometheus
+prometheus:
+  enabled: false
+
+# enables nri-metadata-injection
+webhook:
+  enabled: true
+
+# enables kube-state-metrics
+ksm:
+  enabled: true
+
+# enables nri-kube-events
+kubeEvents:
+  enabled: true
+
+# enables newrelic-logging
+logging:
+  enabled: true
+
+# enables newrelic-pixie
+newrelic-pixie:
+  enabled: false
+
+# enables pixie-chart
+pixie-chart:
+  enabled: false

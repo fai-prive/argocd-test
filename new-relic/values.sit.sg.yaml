@@ -1,0 +1,17 @@
+
+global:
+  cluster: Prive-SIT-SG-App-Cluster-v121
+
+# disable KSM optional metrics
+kube-state-metrics:
+  collectors:
+    daemonsets: false
+    deployments: false
+    endpoints: false
+    namespaces: false
+    replicasets: false
+    services: false
+    statefulsets: false
+
+# disable process metrics
+enableProcessMetrics: false

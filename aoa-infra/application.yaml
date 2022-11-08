@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: new-relic
+  namespace: argocd
+  labels:
+    app.kubernetes.io/instance: apps-deployments
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  project: infra-apps
+  source:
+    repoURL: https://github.com/fai-prive/argocd-test.git
+    targetRevision: HEAD
+    path: new-relic
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated: {}
