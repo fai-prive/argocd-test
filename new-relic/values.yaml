@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 global:
   licenseKey: eu01xxb16615327338269f8928c1dab11f46NRAL
-  cluster: docker-desktop
+
 # enables newrelic-infrastructure
 infrastructure:
   privileged: true

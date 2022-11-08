@@ -1,6 +1,6 @@
 
 global:
-  cluster: docker-desktop
+  cluster: Prive-SIT-SG-App-Cluster-v121
 
 # disable KSM optional metrics
 kube-state-metrics:
