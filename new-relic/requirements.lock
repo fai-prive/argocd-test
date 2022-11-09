@@ -6,8 +6,8 @@ dependencies:
   repository: https://helm-charts.newrelic.com
   version: 1.7.0
 - name: nri-metadata-injection
-  repository: https://helm-charts.newrelic.com
-  version: 1.4.2
+  repository: https://newrelic.github.io/k8s-metadata-injection
+  version: 3.0.10
 - name: kube-state-metrics
   repository: https://kubernetes.github.io/kube-state-metrics
   version: 2.13.2
@@ -23,5 +23,5 @@ dependencies:
 - name: pixie-chart
   repository: https://pixie-helm-charts.storage.googleapis.com
   version: 0.7.7
-digest: sha256:7aaa07e376b4fce33b366a0968d07783d7cc08ae3978bbffaa2c7f74a5d7ac35
-generated: "2022-11-08T17:34:17.789191+08:00"
+digest: sha256:122e5634b130d346ad1aad0aef51e4f67ce1846db3ab00912f878debdf80917c
+generated: "2022-11-09T15:43:39.672686+08:00"
