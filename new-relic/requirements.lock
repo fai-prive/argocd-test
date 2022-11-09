@@ -1,7 +1,7 @@
 dependencies:
 - name: newrelic-infrastructure
-  repository: https://newrelic.github.io/nri-kubernetes
-  version: 3.9.0
+  repository: https://helm-charts.newrelic.com
+  version: 2.4.2
 - name: nri-prometheus
   repository: https://helm-charts.newrelic.com
   version: 1.7.0
@@ -9,8 +9,8 @@ dependencies:
   repository: https://newrelic.github.io/k8s-metadata-injection
   version: 3.0.10
 - name: kube-state-metrics
-  repository: https://prometheus-community.github.io/helm-charts
-  version: 4.22.3
+  repository: https://kubernetes.github.io/kube-state-metrics
+  version: 2.13.2
 - name: nri-kube-events
   repository: https://helm-charts.newrelic.com
   version: 1.8.0
@@ -23,5 +23,5 @@ dependencies:
 - name: pixie-chart
   repository: https://pixie-helm-charts.storage.googleapis.com
   version: 0.7.7
-digest: sha256:d8b3cbbb1216bb497f9577eddc86bfc1cd0729751f3ce03cfe27df6b2ac1714f
-generated: "2022-11-09T15:55:18.081205+08:00"
+digest: sha256:122e5634b130d346ad1aad0aef51e4f67ce1846db3ab00912f878debdf80917c
+generated: "2022-11-09T16:35:26.40299+08:00"
