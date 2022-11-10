@@ -12,8 +12,8 @@ dependencies:
   repository: https://kubernetes.github.io/kube-state-metrics
   version: 2.13.2
 - name: nri-kube-events
-  repository: https://helm-charts.newrelic.com
-  version: 1.8.0
+  repository: https://newrelic.github.io/nri-kube-events
+  version: 2.3.0
 - name: newrelic-logging
   repository: https://helm-charts.newrelic.com
   version: 1.11.10
@@ -23,5 +23,5 @@ dependencies:
 - name: pixie-chart
   repository: https://pixie-helm-charts.storage.googleapis.com
   version: 0.7.7
-digest: sha256:122e5634b130d346ad1aad0aef51e4f67ce1846db3ab00912f878debdf80917c
-generated: "2022-11-09T17:05:25.66132+08:00"
+digest: sha256:0307aca47d705d84e4538940680337edef10a9b865ad6ad7015cdf56eed0fc2f
+generated: "2022-11-10T11:22:27.676268+08:00"
