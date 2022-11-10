@@ -1,7 +1,7 @@
 dependencies:
 - name: newrelic-infrastructure
-  repository: https://helm-charts.newrelic.com
-  version: 2.4.2
+  repository: https://newrelic.github.io/nri-kubernetes
+  version: 3.9.0
 - name: nri-prometheus
   repository: https://helm-charts.newrelic.com
   version: 1.7.0
@@ -23,5 +23,5 @@ dependencies:
 - name: pixie-chart
   repository: https://pixie-helm-charts.storage.googleapis.com
   version: 0.7.7
-digest: sha256:8f6370a10ef068519e09ded83cdeeec8cf72b0e28615037741be16ca06c788c1
-generated: "2022-11-10T11:27:45.780797+08:00"
+digest: sha256:7d29cee8900160d5767b6c1a81326c212ace030f993556d08eebd153971dac35
+generated: "2022-11-10T11:55:43.685614+08:00"
