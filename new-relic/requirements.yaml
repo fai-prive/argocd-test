@@ -2,7 +2,7 @@ dependencies:
   - name: newrelic-infrastructure
     repository: https://newrelic.github.io/nri-kubernetes
     condition: infrastructure.enabled
-    version: 3.9.0
+    version: 2.10.3
 
   - name: nri-prometheus
     repository: https://helm-charts.newrelic.com
