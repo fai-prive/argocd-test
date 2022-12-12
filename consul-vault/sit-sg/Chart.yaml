@@ -6,7 +6,7 @@ version: 0.1.0
 dependencies:
   - name: consul
     repository: "https://helm.releases.hashicorp.com"
-    version: 1.0.2
+    version: 0.32.1
   - name: vault
     repository: "https://helm.releases.hashicorp.com"
     version: 0.23.0
