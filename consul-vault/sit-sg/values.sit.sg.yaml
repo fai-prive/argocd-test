@@ -73,7 +73,7 @@ vault:
     #    secretName: vault
     #    secretKey: AWS_SECRET_ACCESS_KEY
     ha:
-      enabled: true
+      enabled: false
       #replicas: 3
       config: |
         ui = true
