@@ -1,0 +1,9 @@
+dependencies:
+- name: consul
+  repository: https://helm.releases.hashicorp.com
+  version: 0.32.1
+- name: vault
+  repository: https://helm.releases.hashicorp.com
+  version: 0.16.1
+digest: sha256:164d204010f73466907902602293d7e1eea50e46ac3ec08b55a0a45948f467c7
+generated: "2021-10-22T17:03:01.388469918+08:00"

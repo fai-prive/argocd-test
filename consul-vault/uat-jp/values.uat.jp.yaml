@@ -1,0 +1,115 @@
+###### This is for consul
+consul:
+  global:
+    datacenter: uat_jp
+
+  server:
+    replicas: 1
+    bootstrapExpect: 1
+    disruptionBudget:
+      maxUnavailable: 0
+    storage: 8Gi
+    resources:
+      requests:
+        memory: "100Mi"
+        cpu: "100m"
+      limits:
+        memory: "100Mi"
+        cpu: "100m"
+    securityContext:
+      runAsNonRoot: false
+      runAsGroup: 0
+      runAsUser: 0
+      fsGroup: 0
+  client:
+    enabled: true
+    replicas: 2
+    resources:
+      requests:
+        memory: "100Mi"
+        cpu: "100m"
+      limits:
+        memory: "100Mi"
+        cpu: "100m"
+    securityContext:
+      runAsNonRoot: false
+      runAsGroup: 0
+      runAsUser: 0
+      fsGroup: 0
+  ui:
+    service:
+      enabled: true
+      type: ClusterIP
+
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx-internal"
+    labels:
+      app: consul
+      env: uat-jp
+    rules:
+      - host: consul.uat.jp.privemanagers.com
+        http:
+          paths:
+            - path: /
+              backend:
+                serviceName: vault-deploy-consul-ui
+                servicePort: 80
+
+########### This is for vault
+
+vault:
+  server:
+    affinity: ""
+    resources:
+      limits:
+        cpu: 250m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi
+    ha:
+      enabled: true
+      #replicas: 3
+      config: |
+        ui = true
+        seal "awskms" {
+           region = "ap-northeast-1"
+           kms_key_id = "arn:aws:kms:ap-northeast-1:478412423857:key/376fa078-369c-4870-a895-05daf3a596d9"
+        }
+        listener "tcp" {
+          tls_disable = 1
+          address = "[::]:8200"
+          cluster_address = "[::]:8201"
+        }
+        storage "consul" {
+          path = "vault"
+          address = "HOST_IP:8500"
+        }
+        service_registration "kubernetes" {}
+    serviceAccount:
+      create: true
+      name: vault-sa
+      annotations:
+        eks.amazonaws.com/role-arn: arn:aws:iam::478412423857:role/irsa-role20220419083719408300000002
+
+  ui:
+    enabled: true
+    serviceType: ClusterIP
+
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx-internal"
+    labels:
+      app: vault
+      env: uat-jp
+    rules:
+      - host: vault.uat.jp.privemanagers.com
+        http:
+          paths:
+            - path: /
+              backend:
+                serviceName: vault-deploy-ui
+                servicePort: 8200

@@ -1,0 +1,31 @@
+{{- if .Values.vault.ingress.enabled }}
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: vault-ingress
+  namespace: services
+  annotations:
+  {{- toYaml .Values.vault.ingress.annotations | nindent 4 }}
+  labels:
+    app: vault
+    env: uat-jp
+spec:
+  rules:
+  {{- toYaml .Values.vault.ingress.rules | nindent 4 }}
+{{- end }}
+{{- if .Values.consul.ingress.enabled }}
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: consul-ingress
+  namespace: services
+  annotations:
+  {{- toYaml .Values.consul.ingress.annotations | nindent 4 }}
+  labels:
+  {{- toYaml .Values.consul.ingress.labels | nindent 4 }}
+spec:
+  rules:
+  {{- toYaml .Values.consul.ingress.rules | nindent 4 }}
+{{- end }}
