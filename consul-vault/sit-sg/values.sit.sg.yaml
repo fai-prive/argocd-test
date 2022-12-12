@@ -3,79 +3,19 @@ consul:
   global:
     datacenter: sit_sg
 
+  client:
+    enabled: true
+
   server:
     replicas: 1
     bootstrapExpect: 1
     disruptionBudget:
       maxUnavailable: 0
-    storage: 8Gi
-    resources:
-      requests:
-        memory: "100Mi"
-        cpu: "100m"
-      limits:
-        memory: "100Mi"
-        cpu: "100m"
-    securityContext:
-      runAsNonRoot: false
-      runAsGroup: 0
-      runAsUser: 0
-      fsGroup: 0
-  client:
-    enabled: true
-    replicas: 2
-    resources:
-      requests:
-        memory: "100Mi"
-        cpu: "100m"
-      limits:
-        memory: "100Mi"
-        cpu: "100m"
-    securityContext:
-      runAsNonRoot: false
-      runAsGroup: 0
-      runAsUser: 0
-      fsGroup: 0
-  ui:
-    service:
-      enabled: true
-      type: ClusterIP
 
 ########### This is for vault
 
 vault:
   server:
     affinity: ""
-    resources:
-      limits:
-        cpu: 250m
-        memory: 256Mi
-      requests:
-        cpu: 250m
-        memory: 256Mi
-
-    #postStart:
-    #- /bin/sh
-    #- -c
-    #- |
-    #   hostname=`hostname`
-    #   if [ $hostname == "vault-consul-0" ]; then
-    #      sleep 60
-    #      vault operator init > /tmp/data.txt
-    #   else
-    #      echo "hi"
-    #   fi
-    #extraSecretEnvironmentVars:
-    #  - envName: AWS_ACCESS_KEY_ID
-    #    secretName: vault
-    #    secretKey: AWS_ACCESS_KEY_ID
-    #  - envName: AWS_SECRET_ACCESS_KEY
-    #    secretName: vault
-    #    secretKey: AWS_SECRET_ACCESS_KEY
     ha:
       enabled: true
-      #replicas: 3
-
-  ui:
-    enabled: true
-    serviceType: ClusterIP
