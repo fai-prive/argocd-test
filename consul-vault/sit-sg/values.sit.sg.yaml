@@ -73,29 +73,8 @@ vault:
     #    secretName: vault
     #    secretKey: AWS_SECRET_ACCESS_KEY
     ha:
-      enabled: false
+      enabled: true
       #replicas: 3
-      config: |
-        ui = true
-        seal "awskms" {
-           region = "ap-southeast-1"
-           kms_key_id = "1730aba7-a908-42b1-8659-5f8b69d726d8"
-        }
-        listener "tcp" {
-          tls_disable = 1
-          address = "[::]:8200"
-          cluster_address = "[::]:8201"
-        }
-        storage "consul" {
-          path = "vault"
-          address = "HOST_IP:8500"
-        }
-        service_registration "kubernetes" {}
-    serviceAccount:
-      create: true
-      name: vault-sa
-      annotations:
-        eks.amazonaws.com/role-arn: arn:aws:iam::148405664278:role/irsa-role20211117140215092400000002
 
   ui:
     enabled: true
